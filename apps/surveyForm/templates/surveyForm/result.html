@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>result</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>THANK YOU</h1>
+	<div>
+		<p>Thanks for submitting this form! You have submitted this form {{request.session.count}} time(s) now.</p>
+	</div>
+
+	<div class="info">
+		<h3>Submitted Information</h3>
+		<p>Name:{{name}}</p>
+		<p>Dojo Location:{{location}}</p>
+		<p>Favorite Language:{{language}}</p>
+		<p>comment:</p>
+		<p>{{comment}}</p>
+		<form action="/">{% csrf_token %}
+			<p><input type="submit" value="Go Back"></p>
+		</form>
+		<form action="/reset">{% csrf_token %}
+			<p><input type="submit" value="Reset Count"></p>
+		</form>
+	</div>
+</body>
+</html>
